@@ -5,6 +5,7 @@ export enum Chain {
   ETH = 'ETH',
   AVAX = 'AVAX',
   ARB = 'ARB',
+  BASE = 'BASE',
 }
 
 /**
@@ -14,6 +15,7 @@ export enum SupportedChainId {
   ETH_GOERLI = 5,
   AVAX_FUJI = 43113,
   ARB_GOERLI = 421613,
+  BASE_GOERLI = 84531,
 }
 
 /**
@@ -24,6 +26,7 @@ export const SupportedChainIdHex = {
   ETH_GOERLI: '0x5',
   AVAX_FUJI: '0xa869',
   ARB_GOERLI: '0x66eed',
+  BASE_GOERLI: '0x14a33',
 }
 
 interface ChainToChainIdMap {
@@ -38,6 +41,7 @@ export const CHAIN_TO_CHAIN_ID: ChainToChainIdMap = {
   [Chain.ETH]: SupportedChainId.ETH_GOERLI,
   [Chain.AVAX]: SupportedChainId.AVAX_FUJI,
   [Chain.ARB]: SupportedChainId.ARB_GOERLI,
+  [Chain.BASE]: SupportedChainId.BASE_GOERLI,
 }
 
 interface ChainToChainNameMap {
@@ -48,9 +52,10 @@ interface ChainToChainNameMap {
  * Maps a chain to it's readable name
  */
 export const CHAIN_TO_CHAIN_NAME: ChainToChainNameMap = {
-  ETH: 'Ethereum',
-  AVAX: 'Avalanche',
-  ARB: 'Arbitrum',
+  ETH: 'Ethereum Goerli',
+  AVAX: 'Avalanche Fuji',
+  ARB: 'Arbitrum Goerli',
+  BASE: 'Base Goerli',
 }
 
 /**
@@ -67,6 +72,7 @@ export enum DestinationDomain {
   ETH = 0,
   AVAX = 1,
   ARB = 3,
+  BASE = 6,
 }
 
 // https://eips.ethereum.org/EIPS/eip-3085
@@ -119,6 +125,18 @@ const ARB_GOERLI: AddEthereumChainParameter = {
   rpcUrls: ['https://arb-goerli.g.alchemy.com/v2/demo'],
 }
 
+const BASE_GOERLI: AddEthereumChainParameter = {
+  chainId: SupportedChainIdHex.BASE_GOERLI,
+  blockExplorerUrls: ['https://goerli.basescan.org/'],
+  chainName: 'Base Goerli Testnet',
+  nativeCurrency: {
+    name: 'Ethereum',
+    symbol: 'ETH',
+    decimals: 18,
+  },
+  rpcUrls: ['https://goerli.base.org'],
+}
+
 interface ChainIdToChainParameters {
   [key: string]: AddEthereumChainParameter
 }
@@ -127,4 +145,5 @@ export const CHAIN_ID_HEXES_TO_PARAMETERS: ChainIdToChainParameters = {
   [SupportedChainIdHex.ETH_GOERLI]: ETH_GOERLI,
   [SupportedChainIdHex.AVAX_FUJI]: AVAX_FUJI,
   [SupportedChainIdHex.ARB_GOERLI]: ARB_GOERLI,
+  [SupportedChainIdHex.BASE_GOERLI]: BASE_GOERLI,
 }

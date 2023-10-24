@@ -9,6 +9,8 @@ export const CHAIN_IDS_TO_USDC_ADDRESSES = {
   [SupportedChainId.AVAX_FUJI]: '0x5425890298aed601595a70AB815c96711a31Bc65',
 
   [SupportedChainId.ARB_GOERLI]: '0xfd064a18f3bf249cf1f87fc203e90d8f650f2d63',
+
+  [SupportedChainId.BASE_GOERLI]: '0xF175520C52418dfE19C8098071a252da48Cd1C19',
 }
 
 /**
@@ -20,6 +22,8 @@ export const CHAIN_IDS_TO_TOKEN_MESSENGER_ADDRESSES = {
   [SupportedChainId.AVAX_FUJI]: '0xeb08f243e5d3fcff26a9e38ae5520a669f4019d0',
 
   [SupportedChainId.ARB_GOERLI]: '0x12dcfd3fe2e9eac2859fd1ed86d2ab8c5a2f9352',
+
+  [SupportedChainId.BASE_GOERLI]: '0x877b8e8c9e2383077809787ED6F279ce01CB4cc8',
 }
 
 /**
@@ -31,4 +35,6 @@ export const CHAIN_IDS_TO_MESSAGE_TRANSMITTER_ADDRESSES = {
   [SupportedChainId.AVAX_FUJI]: '0xa9fb1b3009dcb79e2fe346c16a604b8fa8ae0a79',
 
   [SupportedChainId.ARB_GOERLI]: '0x109bc137cb64eab7c0b1dddd1edf341467dc2d35',
+
+  [SupportedChainId.BASE_GOERLI]: '0x9ff9a4da6f2157A9c82CE756f8fD7E0d75be8895',
 }
